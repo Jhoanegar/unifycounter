@@ -11,7 +11,7 @@ module UnifyCount
 		def all
 			return @songs unless @songs.empty?
 			@db.execute('SELECT uri,playCount FROM CoreTracks;').each do |row|
-				@songs << { uri: row[0].gsub(/file.*media\//,''), playCount: row[1]} 	
+				@songs << { uri: row[0].gsub(/file.*Music\//,''), playCount: row[1]} 	
 			end
 			return @songs
 		end
