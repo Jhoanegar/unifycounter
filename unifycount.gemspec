@@ -5,11 +5,11 @@ require 'unifycount/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "unifycount"
-  spec.version       = Unifycount::VERSION
+  spec.version       = UnifyCount::VERSION
   spec.authors       = ["Jhoan"]
   spec.email         = ["jhoanegar@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Unifies the play count of banshee and iTunes.}
+  # spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
 end
