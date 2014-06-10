@@ -38,6 +38,6 @@ module UnifyCount
 					SET playCount=#{args[:playCount]}
 					WHERE trackID=#{song[:key]};
 			")
-		end
-	end
+		end 
+	end 
 end
