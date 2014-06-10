@@ -39,5 +39,10 @@ module UnifyCount
 					WHERE trackID=#{song[:key]};
 			")
 		end 
+
+		def reload_songs
+			@songs = []
+			all
+		end
 	end 
 end

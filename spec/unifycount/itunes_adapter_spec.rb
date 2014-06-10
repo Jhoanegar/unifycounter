@@ -23,6 +23,39 @@ describe UnifyCount::ItunesAdapter do
   		end
   	end
 
+    specify 'every file has a key' do
+      @adapter.all.each do |song|
+        expect(song[:key]).to be_a String
+      end
+    end
+  end
+
+  context 'finding songs' do
+    it 'finds by uri' do
+      song = @adapter.find_by_uri('file:///another/file.mp3')
+      # raise Exception, song.inspect
+      expect(song[:playCount]).to eql(20)
+    end
+
+    it 'finds by key' do
+      song = @adapter.find_by_key(2)
+      expect(song[:uri]).to eql('file:///another/file.mp3')
+    end
+  end
+
+  context 'updating songs' do
+    after(:each) do
+      @adapter.update_song(@adapter.find_by_key(1),
+        playCount: 10)
+    end
+
+    it 'updates the play count' do
+      song = @adapter.find_by_key(1)
+      @adapter.update_song(song, playCount: 100)
+      @adapter.reload_songs
+      song = @adapter.find_by_key(1)
+      expect(song[:playCount]).to eql(100)
+    end
   end
 
 end

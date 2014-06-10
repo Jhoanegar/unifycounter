@@ -67,7 +67,7 @@ describe UnifyCount::BansheeAdapter do
 		it 'updates the play count' do
 			song = @adapter.find_by_key(1)
 			@adapter.update_song(song, playCount: 100)
-			@adapter = UnifyCount::BansheeAdapter.new('testdb.sqlite3')
+			@adapter.reload_songs
 			song = @adapter.find_by_key(1)
 			expect(song[:playCount]).to eql(100)
 		end
