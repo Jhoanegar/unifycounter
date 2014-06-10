@@ -6,26 +6,25 @@ def create_test_database
 	File.delete(file) if File.file?(file)
 	db = SQLite3::Database.new(file)
 	db.execute('CREATE TABLE CoreTracks(
-		uri VARCHAR, playcount INT);')
+		uri VARCHAR, playcount INT, trackID INT);')
 	db.execute("INSERT INTO CoreTracks 
-			VALUES('file:///path/to/file.mp3',10);")
+			VALUES('file:///path/to/file.mp3',10,1);")
 	db.execute("INSERT INTO CoreTracks 
-			VALUES('file:///another/file.mp3',20);")	
+			VALUES('file:///another/file.mp3',20,2);")	
 end
 
 describe UnifyCount::BansheeAdapter do
-	before(:all) do
+
+	before(:each) do
 		create_test_database
+		@adapter = UnifyCount::BansheeAdapter.new('testdb.sqlite3')
 	end
 
-	after(:all) do
+	after(:each) do
 		file = 'testdb.sqlite3'
 		File.delete(file) if File.file?(file)
 	end
 
-	before(:each) do
-		@adapter = UnifyCount::BansheeAdapter.new('testdb.sqlite3')
-	end
 
 	context 'reading the metadata' do
 	  it 'reads all the songs' do
@@ -45,6 +44,32 @@ describe UnifyCount::BansheeAdapter do
   		end
   	end
 
+  	specify 'every file has a key' do
+  		@adapter.all.each do |song|
+  			expect(song[:key]).to be_a Integer
+  		end
+  	end
   end
 
-end
+  context 'finding songs' do
+  	it 'finds by uri' do
+  		song = @adapter.find_by_uri('file:///another/file.mp3')
+  		expect(song[:playCount]).to eql(20)
+  	end
+
+  	it 'finds by key' do
+  		song = @adapter.find_by_key(2)
+  		expect(song[:uri]).to eql('file:///another/file.mp3')
+  	end
+  end
+
+  context 'updating songs' do
+		it 'updates the play count' do
+			song = @adapter.find_by_key(1)
+			@adapter.update_song(song, playCount: 100)
+			@adapter = UnifyCount::BansheeAdapter.new('testdb.sqlite3')
+			song = @adapter.find_by_key(1)
+			expect(song[:playCount]).to eql(100)
+		end
+  end
+ end
