@@ -1,7 +1,10 @@
 require 'plist'
 module UnifyCount
 	class ItunesAdapter
+		class ItunesLibraryNotFound < Exception; end
+
 		def initialize(file)
+			raise ItunesLibraryNotFound unless File.file?(file)
 			@db = Plist::parse_xml(file)
 			@songs = []
 		end

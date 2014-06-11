@@ -21,7 +21,6 @@ module UnifyCount
 			find_song(song)[:playCount] + song[playCount]
 		end
 
-
 		def update_song(song, args={})
 			@songs.update_song(song,args)
 		end

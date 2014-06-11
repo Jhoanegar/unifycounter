@@ -13,71 +13,16 @@
 	<key>Tracks</key>
 	<dict>
 
-		<key>1</key>
+		<key>1231312</key>
 		<dict>
-			<key>Track ID</key><integer>1140</integer>
-			<key>Name</key><string>True</string>
-			<key>Artist</key><string>Akira Yamaoka</string>
-			<key>Album Artist</key><string>AKIRA YAMAOKA</string>
-			<key>Composer</key><string>Akira Yamaoka</string>
-			<key>Album</key><string>Silent Hill 2 OST</string>
-			<key>Genre</key><string>Soundtracks</string>
-			<key>Kind</key><string>Archivo de audio MPEG</string>
-			<key>Size</key><integer>2999644</integer>
-			<key>Total Time</key><integer>186906</integer>
-			<key>Disc Number</key><integer>1</integer>
-			<key>Disc Count</key><integer>1</integer>
-			<key>Track Number</key><integer>24</integer>
-			<key>Date Modified</key><date>2011-12-26T05:48:07Z</date>
-			<key>Date Added</key><date>2014-01-25T06:46:02Z</date>
-			<key>Bit Rate</key><integer>128</integer>
-			<key>Sample Rate</key><integer>44100</integer>
-			<key>Comments</key><string> 000006E3 00000944 00001210 00001966 00013897 00011187 00007160 00007EA1 0000EA77 00011187</string>
-			<key>Play Count</key><integer>10</integer>
-			<key>Play Date</key><integer>3466467508</integer>
-			<key>Play Date UTC</key><date>2013-11-05T08:38:28Z</date>
-			<key>Skip Count</key><integer>10</integer>
-			<key>Skip Date</key><date>2013-07-06T04:35:11Z</date>
-			<key>Rating</key><integer>80</integer>
-			<key>Album Rating</key><integer>60</integer>
-			<key>Album Rating Computed</key><true/>
-			<key>Artwork Count</key><integer>2</integer>
-			<key>Persistent ID</key><string>3B8772E172835671</string>
-			<key>Track Type</key><string>File</string>
+			<key>Play Count</key><integer>100</integer>
       <key>Location</key><string>file://localhost/:F/Music/path/to/file.mp3</string>
-			<key>File Folder Count</key><integer>-1</integer>
-			<key>Library Folder Count</key><integer>-1</integer>
 		</dict>
 	
-		<key>2</key>
+		<key>23924</key>
 		<dict>
-			<key>Track ID</key><integer>2904</integer>
-			<key>Name</key><string>Raging Zef Boner</string>
-			<key>Artist</key><string>Die Antwoord</string>
-			<key>Album Artist</key><string>Die Antwoord</string>
-			<key>Album</key><string>Donker Mag</string>
-			<key>Genre</key><string>Electronic</string>
-			<key>Kind</key><string>Archivo de audio MPEG</string>
-			<key>Size</key><integer>8096916</integer>
-			<key>Total Time</key><integer>199706</integer>
-			<key>Track Number</key><integer>5</integer>
-			<key>Year</key><integer>2014</integer>
-			<key>Date Modified</key><date>2014-06-04T08:29:03Z</date>
-			<key>Date Added</key><date>2014-06-05T00:28:45Z</date>
-			<key>Bit Rate</key><integer>320</integer>
-			<key>Sample Rate</key><integer>44100</integer>
 			<key>Play Count</key><integer>20</integer>
-			<key>Play Date</key><integer>3484972217</integer>
-			<key>Play Date UTC</key><date>2014-06-07T12:50:17Z</date>
-			<key>Rating</key><integer>100</integer>
-			<key>Album Rating</key><integer>100</integer>
-			<key>Album Rating Computed</key><true/>
-			<key>Artwork Count</key><integer>1</integer>
-			<key>Persistent ID</key><string>F533BEE189778D10</string>
-			<key>Track Type</key><string>File</string>
       <key>Location</key><string>file://localhost/F:/Music/another/file.mp3</string>
-			<key>File Folder Count</key><integer>-1</integer>
-			<key>Library Folder Count</key><integer>-1</integer>
 		</dict>
 	</dict>
 

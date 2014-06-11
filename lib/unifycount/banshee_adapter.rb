@@ -2,8 +2,10 @@ require 'sqlite3'
 module UnifyCount
 	class BansheeAdapter
 		attr_reader :db
+		class BansheeLibraryNotFound < Exception; end
 
 		def initialize(file)
+			raise BansheeLibraryNotFound unless File.file?(file)
 			@db = SQLite3::Database.open(file)
 			@songs = []
 		end

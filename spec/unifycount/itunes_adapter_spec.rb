@@ -32,14 +32,14 @@ describe UnifyCount::ItunesAdapter do
 
   context 'finding songs' do
     it 'finds by uri' do
-      song = @adapter.find_by_uri('file:///another/file.mp3')
+      song = @adapter.find_by_uri('another/file.mp3')
       # raise Exception, song.inspect
       expect(song[:playCount]).to eql(20)
     end
 
     it 'finds by key' do
       song = @adapter.find_by_key(2)
-      expect(song[:uri]).to eql('file:///another/file.mp3')
+      expect(song[:uri]).to eql('another/file.mp3')
     end
   end
 
