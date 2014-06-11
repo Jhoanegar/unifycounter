@@ -27,7 +27,7 @@ module UnifyCount
 		end
 
 		def extract_play_count(track)
-			track['Play Count']
+			track['Play Count'] || 0
 		end
 
 		def find_by_uri(uri)
@@ -54,6 +54,10 @@ module UnifyCount
 
     def save
 			Plist::Emit.save_plist(@db,@file)
+    end
+
+    def size
+      all.size
     end
 	end
 end

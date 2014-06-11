@@ -15,7 +15,7 @@ module UnifyCount
 			@db.execute('SELECT uri,playCount,trackID FROM CoreTracks;').each do |row|
 				@songs << { 
 					uri: row[0].gsub(/file.*Music\//,''),
-					playCount: row[1],
+					playCount: row[1] || 0,
 					key: row[2]
 				} 	
 			end
@@ -48,6 +48,10 @@ module UnifyCount
 		end
 
     def save
+    end
+
+    def size
+      songs.all.size
     end
 	end 
 end

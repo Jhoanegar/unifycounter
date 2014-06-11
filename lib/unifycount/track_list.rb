@@ -1,3 +1,4 @@
+require 'ruby-progressbar'
 module UnifyCount
 	class TrackList
 		
@@ -6,7 +7,13 @@ module UnifyCount
 		end
 		
 		def update_with(track_list)
+      pb = ProgressBar.create(
+        :title => "Songs",
+        :total => @songs.size,
+        :format => '%a |%b>>%i| %p%% %t'
+      )
 			@songs.all.each do |my_song|
+        pb.log "Updating #{my_song[:uri].gsub('%20',' ')}..."
 				if track_list.contains?(my_song)
 					his_song = track_list.find_song(my_song)
 					my_play_count = my_song[:playCount]
@@ -14,6 +21,7 @@ module UnifyCount
 					track_list.update_song(his_song, playCount: 0)
 					self.update_song(my_song, playCount: his_play_count + my_play_count)
 				end
+        pb.increment
 			end
 		end
 
