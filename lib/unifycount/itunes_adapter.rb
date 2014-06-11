@@ -28,19 +28,21 @@ module UnifyCount
 
 		def find_by_uri(uri)
 			ret = all.select { |song| song[:uri] == uri }
-			ret.first
+			return ret.first unless ret.nil?
+			nil
 		end
 
 		def find_by_key(key)
 			ret = all.select { |song| song[:key].to_s == key.to_s }
-			ret.first
+			return ret.first unless ret.nil?
+			nil
 		end
 
 		def reload_songs
 			@songs = []
 			all
 		end
-		
+
 		def update_song(song, args={})
 			@db['Tracks'][song[:key]]['Play Count'] = 
 				args[:playCount]

@@ -22,14 +22,14 @@ module UnifyCount
 
 		def find_by_uri(uri)
 			ret = self.all.find { |song| song[:uri] == uri}
-			raise Exception , "#{key}, Not found in #{all}" unless ret
-			ret
+			return ret unless ret.nil?
+			nil
 		end
 
 		def find_by_key(key)
 			ret = self.all.find { |song| song[:key] == key}
-			raise Exception , "#{key}, Not found in #{all}" unless ret
-			ret
+			return ret unless ret.nil?
+			nil
 		end
 
 		def update_song(song, args={})
