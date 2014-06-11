@@ -6,6 +6,7 @@ module UnifyCount
 		def initialize(file)
 			raise ItunesLibraryNotFound unless File.file?(file)
 			@db = Plist::parse_xml(file)
+			@file = file
 			@songs = []
 		end
 	
@@ -50,5 +51,9 @@ module UnifyCount
 			@db['Tracks'][song[:key]]['Play Count'] = 
 				args[:playCount]
 		end
+
+    def save
+			Plist::Emit.save_plist(@db,@file)
+    end
 	end
 end

@@ -29,6 +29,9 @@ module UnifyCount
 			@songs.find_by_uri(song[:uri])
 		end
 
+    def save
+      @songs.save
+    end
 		alias_method :find_song, :contains?
 	end
 

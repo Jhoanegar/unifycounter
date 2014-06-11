@@ -46,5 +46,8 @@ module UnifyCount
 			@songs = []
 			all
 		end
+
+    def save
+    end
 	end 
 end

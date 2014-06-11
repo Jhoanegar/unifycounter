@@ -47,9 +47,11 @@ command :merge do |c|
       banshee = UnifyCount::BansheeAdapter.new(options.banshee_library)
       itunes_tracks = UnifyCount::TrackList.new(itunes)
       banshee_tracks = UnifyCount::TrackList.new(banshee)
-      binding.pry
+      # binding.pry
       itunes_tracks.update_with(banshee_tracks)
 
+      itunes_tracks.save
+      banshee_tracks.save
     rescue UnifyCount::BansheeAdapter::BansheeLibraryNotFound => e
       puts "Error. Couldn't open the banshee library"
     rescue UnifyCount::ItunesAdapter::ItunesLibraryNotFound => e

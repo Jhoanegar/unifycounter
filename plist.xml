@@ -2,29 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Major Version</key><integer>1</integer>
-	<key>Minor Version</key><integer>1</integer>
-	<key>Date</key><date>2014-06-07T10:09:26Z</date>
-	<key>Application Version</key><string>11.2.2</string>
-	<key>Features</key><integer>5</integer>
-	<key>Show Content Ratings</key><true/>
-	<key>Music Folder</key><string>file://localhost/C:/Users/Jhoan/Music/iTunes/iTunes%20Music/</string>
-	<key>Library Persistent ID</key><string>91C13E0C75650CBC</string>
+	<key>Application Version</key>
+	<string>11.2.2</string>
+	<key>Date</key>
+	<date>2014-06-07T10:09:26Z</date>
+	<key>Features</key>
+	<integer>5</integer>
+	<key>Library Persistent ID</key>
+	<string>91C13E0C75650CBC</string>
+	<key>Major Version</key>
+	<integer>1</integer>
+	<key>Minor Version</key>
+	<integer>1</integer>
+	<key>Music Folder</key>
+	<string>file://localhost/C:/Users/Jhoan/Music/iTunes/iTunes%20Music/</string>
+	<key>Show Content Ratings</key>
+	<true/>
 	<key>Tracks</key>
 	<dict>
-
 		<key>1231312</key>
 		<dict>
-			<key>Play Count</key><integer>100</integer>
-      <key>Location</key><string>file://localhost/:F/Music/path/to/file.mp3</string>
+			<key>Location</key>
+			<string>file://localhost/:F/Music/path/to/file.mp3</string>
+			<key>Play Count</key>
+			<integer>110</integer>
 		</dict>
-	
 		<key>23924</key>
 		<dict>
-			<key>Play Count</key><integer>20</integer>
-      <key>Location</key><string>file://localhost/F:/Music/another/file.mp3</string>
+			<key>Location</key>
+			<string>file://localhost/F:/Music/another/file.mp3</string>
+			<key>Play Count</key>
+			<integer>30</integer>
 		</dict>
 	</dict>
-
 </dict>
 </plist>
