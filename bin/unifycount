@@ -4,6 +4,7 @@ require 'unifycount'
 require 'rubygems'
 require 'commander/import'
 require 'pp'
+require 'pry'
 program :version, '0.0.1'
 program :description, 'Merges the play count of the banshee music library into the iTunes music library'
  
@@ -34,9 +35,11 @@ command :merge do |c|
   c.action do |args, options|
     unless options.banshee_library 
       puts "Error. Missing option -b."
+      exit
     end
     unless options.itunes_library 
       puts "Error. Missing option -i."
+      exit
     end
 
     begin
@@ -44,7 +47,9 @@ command :merge do |c|
       banshee = UnifyCount::BansheeAdapter.new(options.banshee_library)
       itunes_tracks = UnifyCount::TrackList.new(itunes)
       banshee_tracks = UnifyCount::TrackList.new(banshee)
-      
+      binding.pry
+      itunes_tracks.update_with(banshee_tracks)
+
     rescue UnifyCount::BansheeAdapter::BansheeLibraryNotFound => e
       puts "Error. Couldn't open the banshee library"
     rescue UnifyCount::ItunesAdapter::ItunesLibraryNotFound => e

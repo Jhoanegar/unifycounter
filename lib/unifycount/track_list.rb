@@ -8,7 +8,7 @@ module UnifyCount
 		def update_with(track_list)
 			@songs.all.each do |my_song|
 				if track_list.contains?(my_song)
-					his_song = track_list.find_song(song)
+					his_song = track_list.find_song(my_song)
 					my_play_count = my_song[:playCount]
 					his_play_count = his_song[:playCount]
 					track_list.update_song(his_song, playCount: 0)
