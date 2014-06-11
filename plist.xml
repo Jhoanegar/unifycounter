@@ -44,7 +44,7 @@
 			<key>Artwork Count</key><integer>2</integer>
 			<key>Persistent ID</key><string>3B8772E172835671</string>
 			<key>Track Type</key><string>File</string>
-      <key>Location</key><string>file:///path/to/file.mp3</string>
+      <key>Location</key><string>file://localhost/:F/Music/path/to/file.mp3</string>
 			<key>File Folder Count</key><integer>-1</integer>
 			<key>Library Folder Count</key><integer>-1</integer>
 		</dict>
@@ -75,7 +75,7 @@
 			<key>Artwork Count</key><integer>1</integer>
 			<key>Persistent ID</key><string>F533BEE189778D10</string>
 			<key>Track Type</key><string>File</string>
-      <key>Location</key><string>file:///another/file.mp3</string>
+      <key>Location</key><string>file://localhost/F:/Music/another/file.mp3</string>
 			<key>File Folder Count</key><integer>-1</integer>
 			<key>Library Folder Count</key><integer>-1</integer>
 		</dict>
