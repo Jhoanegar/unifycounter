@@ -44,10 +44,11 @@ command :merge do |c|
 
     begin
       itunes = UnifyCount::ItunesAdapter.new(options.itunes_library)
+      # binding.pry
+
       banshee = UnifyCount::BansheeAdapter.new(options.banshee_library)
       itunes_tracks = UnifyCount::TrackList.new(itunes)
       banshee_tracks = UnifyCount::TrackList.new(banshee)
-      # binding.pry
       itunes_tracks.update_with(banshee_tracks)
 
       itunes_tracks.save
